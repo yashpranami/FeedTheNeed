@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="/static/donstyle.css">
+    <title>donate
+
+    </title>
+</head>
+
+<body>
+    <nav class="navbar backgrouund h-nav-resp">
+        <ul class="nav-list  v-class-resp">
+           <!-- <div class="logo"><img src="{%static 'logo.png'%}" alt="logo"></div> -->
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>
+                <a href="">Donate</a>
+            </li>
+            <li><a href="{% url 'request' %}">Request Food</a></li>
+         <!--   <li><a href="contact us">Contact us</a></li>
+            <li><a href="Corona Warriors">Corona warrior</a></li> -->
+        </ul>
+        <div class="rightnav v-class-resp">
+            <input type="text" name="search" id="search">
+            <button class="btn btn-sm">Search</button>
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <center>
+        <h3 id="t">Donate</h3>
+    </center>
+    <div id="bg">
+        <p class="paras">This is donation page</p>
+    </div>
+    <div id="bg1">
+        <img src="{%static 'don.jpg'%}" alt="" srcset="" id="res">
+        <section class="insert">
+            <h2 class="textcenter">Fill the form</h2>
+            <form action="{% url 'donate' %}" method='post'>
+            {% csrf_token %}
+            <div class="form">
+                <label for="name">Name:</label><br>
+                <input class="form-input" type="text" name="name" id="name" placeholder="Enter your name">
+
+              <!--  <label for="address">Address:</label><br>
+                <input class="form-input" type="text" name="address" id="address" placeholder="Enter your Address">-->
+
+                <label for="phone"> Phone Number:</label><br>
+                <input class="form-input" type="text" name="phone" id="phone" placeholder="Enter your Number">
+
+                <label for="email"> Email:</label><br>
+                <input class="form-input" type="email" name="email" id="email" placeholder="Enter your Email">
+
+                <label for="exampleFormControlInput1"> Type of Donation:</label><br>
+                <input class="form-input" type="text" name="type_of_donation" id="exampleFormControlInput1" placeholder="What you want to donate">
+
+                <button type="submit" value="Submit" class="btn btn-dark">Submit</button>
+            </div>
+        </section>
+
+        <footer class="background">
+            <p class="text-footer">Feed the need College</p>
+        </footer>
+        <script src="{% static 'donscript.js' %}"></script>
+
+
+
+</body>
+
+
+</html>
